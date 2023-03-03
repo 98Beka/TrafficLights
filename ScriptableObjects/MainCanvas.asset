@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 493fbb4b327b2af49af29d5d1a4ee5db, type: 3}
+  m_Name: MainCanvas
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 976812408020137506, guid: 3b3ab3db1315c844eb63f67c115f06a4, type: 3}
+  startButton: {fileID: 4422362668641269822, guid: 82a399c444e7ef64493ba4f5b9dc0ec6, type: 3}
+  pauseButton: {fileID: 1007409018511981678, guid: 2adb1d2d0515cce4b96d1e700dc275c6, type: 3}
+  xButton: {fileID: 4837509230340937714, guid: 8eefbfaaeaeb7f54287d53e9ccd11bf5, type: 3}
+  yButton: {fileID: 2071194436916067206, guid: 2969662ea6b191840a7564b816532206, type: 3}
+  eventSistem: {fileID: 2821119810183505762, guid: 8ac039f76727e4447a47a85d04c04006, type: 3}
