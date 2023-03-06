@@ -5,15 +5,15 @@ using Zenject;
 
 public class GameInstaller
 {
-    private IEnvirenmentSpawner envirenmentSpawner;
+    private IEnvirenmentInitializer envirenmentInitializer;
 
     [Inject]
-    public void Construct(IEnvirenmentSpawner envirenmentSpawner) {
-        this.envirenmentSpawner = envirenmentSpawner;
+    public void Construct(IEnvirenmentInitializer envirenmentInitializer) {
+        this.envirenmentInitializer = envirenmentInitializer;
         Initialize();
     }
 
     private void Initialize() {
-        envirenmentSpawner.SpawnEnvirenment();
+        envirenmentInitializer.EnvirenmentInitialize();
     }
 }

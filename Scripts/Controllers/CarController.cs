@@ -6,13 +6,15 @@ public class CarController : MonoBehaviour {
     private float minSpeed = 100;
     private float rayLong = 50;
     private Rigidbody rb;
-    private Renderer renderer;
+    private Renderer _renderer;
     private bool isStop;
-    [SerializeField] float magnitude;
+    private bool isCrashed = false;
+[SerializeField] float magnitude;
+
     private void Start() {
-        renderer = GetComponent<Renderer>();
+        _renderer = GetComponent<Renderer>();
         rb = this.gameObject.GetComponent<Rigidbody>();
-        defloaltSpeed = Random.RandomRange(minSpeed, maxSpeed);
+        defloaltSpeed = Random.Range(minSpeed, maxSpeed);
     }
     private void Update() {
         if (transform.position.y < -10)
@@ -32,7 +34,7 @@ public class CarController : MonoBehaviour {
             MoveForward();
         magnitude = rb.velocity.magnitude;
     }
-    private bool isCrashed = false;
+
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.layer == 3) {
             GetComponent<Renderer>().material.color = Color.red;
@@ -43,18 +45,16 @@ public class CarController : MonoBehaviour {
 
     private void MoveForward() {
         if (!isCrashed) {
-
-        renderer.material.color = Color.blue;
-        float deltaTime = Time.fixedDeltaTime;
-        if (rb.velocity.magnitude < 70)
-            deltaTime *= 10;
-
-        rb.AddForce(transform.forward * defloaltSpeed * deltaTime);
+            _renderer.material.color = Color.blue;
+            float deltaTime = Time.fixedDeltaTime;
+            if (rb.velocity.magnitude < 70)
+                deltaTime *= 10;
+            rb.AddForce(transform.forward * defloaltSpeed * deltaTime);
         }
     }
     private void Stop() {
         if(!isCrashed)
-            renderer.material.color = Color.yellow;
+            _renderer.material.color = Color.yellow;
         if (rb.velocity.magnitude > 1) {
             rb.velocity -= rb.velocity * Time.fixedDeltaTime;
         }

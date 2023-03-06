@@ -6,9 +6,10 @@ using Zenject;
 public class CarSpawner : MonoBehaviour, ICarSpawner {
     [SerializeField] Transform startPointX;
     [SerializeField] Transform startPointY;
-    [SerializeField] GameObject car;
+    [SerializeField] GameObject _carPrefabX;
+    [SerializeField] GameObject _carPrefabY;
     private bool isSpawnOn = false;
-    private float spawnTime = 2;
+    private float spawnTime = 5;
 
     //public void Start() {
     //    StartCoroutine(HealthIncrease());
@@ -20,21 +21,22 @@ public class CarSpawner : MonoBehaviour, ICarSpawner {
     private void Update() {
         time += Time.deltaTime;
         if(time > spawnTime && isSpawnOn) {
-            float x = Random.RandomRange(0, 500);
-            Spawn(startPointX.position + new Vector3(x, 0, 0), new Vector3(0, 90, 0)).tag = "carX";
-
-            float y = Random.RandomRange(0, 500);
-            Spawn(startPointY.position + new Vector3(0, 0, y), new Vector3(0, 0, 0)).tag = "carY";
+            float x = Random.Range(0, 5);
+            Spawn(startPointX.position + new Vector3(x, 0, 0), _carPrefabX);
+            
+            float y = Random.Range(0, 5);
+            Spawn(startPointY.position + new Vector3(0, 0, y), _carPrefabY);
             time = 0;
         }
     }
 
-    private GameObject Spawn(Vector3 position, Vector3 euler) {
-        var carCopy = GameObject.Instantiate(car);
-        carCopy.transform.rotation = Quaternion.Euler(euler);
-        carCopy.GetComponent<Rigidbody>().velocity = carCopy.transform.forward * 100;
-        carCopy.transform.position = position;
-        return carCopy;
+    private GameObject Spawn(Vector3 position, GameObject _carPrefab) {
+        var _carModel = new CarModel();
+        var carObject = GameObject.Instantiate(_carPrefab);
+        var carView = carObject.GetComponent<CarView>();
+        carObject.transform.position = position;
+        var _carPresenter = new CarPresenter(carView, _carModel);
+        return carObject;
     }
 
     public void StartSpawn() {

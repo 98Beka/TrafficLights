@@ -238,7 +238,7 @@ MonoBehaviour:
   - {fileID: 2268611382052131366, guid: 3948703e74bdd0a4396036f2957bcc5a, type: 3}
   trafficLight: {fileID: 11400000, guid: a5890e2a09691fb46a64ef98e0656c0e, type: 2}
   mainCanvas: {fileID: 11400000, guid: dd776ce2fa8dcb543a7123fc470514ad, type: 2}
-  camera: {fileID: 5129124358159021620, guid: cf4cb55ad85a0f542b3b28bdf9c75fe8, type: 3}
+  _camera: {fileID: 5129124358159021620, guid: cf4cb55ad85a0f542b3b28bdf9c75fe8, type: 3}
   directaionLight: {fileID: 6167117500424361737, guid: d4bd070be6be24d44a3b232fa25382a1, type: 3}
 --- !u!114 &741351351
 MonoBehaviour:
@@ -264,9 +264,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde8af2f5d4e759439b96170fed81d03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPointX: {fileID: 3538163052407832872, guid: 3120617a6863f634aaf2cc0130c7e512, type: 3}
-  startPointY: {fileID: 4303631480524071987, guid: 1c993ef1894ec5348b20e9f99acfec07, type: 3}
-  car: {fileID: 4575679866475129504, guid: 8ae9e27386a901347a7478d792eacc9f, type: 3}
+  startPointX: {fileID: 7173855010005189587, guid: 1c993ef1894ec5348b20e9f99acfec07, type: 3}
+  startPointY: {fileID: 8452272491005124529, guid: 3120617a6863f634aaf2cc0130c7e512, type: 3}
+  _carPrefabX: {fileID: 4575679866475129504, guid: 8ae9e27386a901347a7478d792eacc9f, type: 3}
+  _carPrefabY: {fileID: 4575679866475129504, guid: f106c5f098cd76741bc1d656b549e276, type: 3}
 --- !u!114 &741351353
 MonoBehaviour:
   m_ObjectHideFlags: 0

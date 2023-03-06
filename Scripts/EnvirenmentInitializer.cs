@@ -4,12 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-public class EnvirenmentSpawner : MonoBehaviour, IEnvirenmentSpawner
-{
+public class EnvirenmentInitializer : MonoBehaviour, IEnvirenmentInitializer {
     [SerializeField] List<GameObject> roads;
     [SerializeField] TrafficLight trafficLight;
     [SerializeField] MainCanvas mainCanvas;
-    [SerializeField] GameObject camera;
+    [SerializeField] GameObject _camera;
     [SerializeField] GameObject directaionLight;
     private ITrafficLightController trafficLightController;
     private ICarSpawner carSpawner;
@@ -20,7 +19,7 @@ public class EnvirenmentSpawner : MonoBehaviour, IEnvirenmentSpawner
         this.carSpawner = carSpawner;
     }
     // Start is called before the first frame update
-    public void SpawnEnvirenment() {
+    public void EnvirenmentInitialize() {
         SpawnTrafficLight();
         SpawnCamera();
         SpawnLights();
@@ -65,7 +64,7 @@ public class EnvirenmentSpawner : MonoBehaviour, IEnvirenmentSpawner
         });
     }
     private void SpawnCamera() {
-        Instantiate(camera);
+        Instantiate(_camera);
     }
     private void SpawnLights() {
         Instantiate(directaionLight);
