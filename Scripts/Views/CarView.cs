@@ -2,7 +2,9 @@ using System;
 using UnityEngine;
 
 public class CarView : MonoBehaviour, ICarView {
+    private const int MIN_Y = -5;
     public event Action Crash;
+    public event Action Finish;
     private Rigidbody _rb;
     private bool _isEngineTurnedOn = true;
     private bool _isCrashed;
@@ -10,15 +12,20 @@ public class CarView : MonoBehaviour, ICarView {
     public float MaxMagnitudeForAdditionalSpeed { get; set; }
     public float RayLong { get; set; }
     public float Speed { get; set; }
+    [SerializeField] float speed;
 
     private void Start() {
         _rb = this.gameObject.GetComponent<Rigidbody>();
+        speed = Speed;
     }
+
     private void Update() {
         bool isRoadFree = CheckIfRoadFree();
 
         _isEngineTurnedOn = isRoadFree ? true : false;
         Move();
+        if (transform.position.y < MIN_Y)
+            Destroy(this.gameObject, 3);
     }
     private bool CheckIfRoadFree() {
         bool res;
@@ -43,13 +50,12 @@ public class CarView : MonoBehaviour, ICarView {
             GetComponent<Renderer>().material.color = Color.red;
             _isCrashed = true;
             Crash?.Invoke();
-            //Destroy(this.gameObject, 3);
+        }
+        if(other.gameObject.tag == "finish") {
+            Finish?.Invoke();
+            Destroy(this.gameObject);
         }
     }
-    public void EnableMoving() {
-        _isEngineTurnedOn = true;
-    }
-    public void DisableMoving() {
-        _isEngineTurnedOn = false;
-    }
+    public void EnableMoving() => _isEngineTurnedOn = true;
+    public void DisableMoving() => _isEngineTurnedOn = false;
 }

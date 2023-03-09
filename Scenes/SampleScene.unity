@@ -132,12 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 741351349}
-  - component: {fileID: 741351348}
-  - component: {fileID: 741351351}
-  - component: {fileID: 741351347}
-  - component: {fileID: 741351346}
-  - component: {fileID: 741351350}
-  - component: {fileID: 741351353}
+  - component: {fileID: 741351356}
   - component: {fileID: 741351352}
   m_Layer: 0
   m_Name: GameInstaller
@@ -146,66 +141,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &741351346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 741351344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2240d3e3b6cf96142be4bfe07c77947c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  envirenmentSpawner: {fileID: 741351350}
---- !u!114 &741351347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 741351344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0aa957d6c01f9d4ba72b94ec82e754d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &741351348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 741351344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89715ad69b973a14899afa2c6730b30b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _scriptableObjectInstallers: []
-  _monoInstallers:
-  - {fileID: 741351347}
-  - {fileID: 741351351}
-  - {fileID: 741351346}
-  - {fileID: 741351353}
-  _installerPrefabs: []
-  _autoRun: 1
-  OnPreInstall:
-    m_PersistentCalls:
-      m_Calls: []
-  OnPostInstall:
-    m_PersistentCalls:
-      m_Calls: []
-  OnPreResolve:
-    m_PersistentCalls:
-      m_Calls: []
-  OnPostResolve:
-    m_PersistentCalls:
-      m_Calls: []
-  _parentNewObjectsUnderSceneContext: 0
-  _contractNames: []
-  _parentContractNames: []
 --- !u!4 &741351349
 Transform:
   m_ObjectHideFlags: 0
@@ -221,37 +156,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &741351350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 741351344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cffd522743d9a34c9faa1057d556616, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roads:
-  - {fileID: 7766726687796521331, guid: 042eb6b89ec74f544b029b0b761703b4, type: 3}
-  - {fileID: 2268611382052131366, guid: 3948703e74bdd0a4396036f2957bcc5a, type: 3}
-  trafficLight: {fileID: 11400000, guid: a5890e2a09691fb46a64ef98e0656c0e, type: 2}
-  mainCanvas: {fileID: 11400000, guid: dd776ce2fa8dcb543a7123fc470514ad, type: 2}
-  _camera: {fileID: 5129124358159021620, guid: cf4cb55ad85a0f542b3b28bdf9c75fe8, type: 3}
-  directaionLight: {fileID: 6167117500424361737, guid: d4bd070be6be24d44a3b232fa25382a1, type: 3}
---- !u!114 &741351351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 741351344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5bd5b57ffcee704786e460034e7b7ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &741351352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,11 +168,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde8af2f5d4e759439b96170fed81d03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPointX: {fileID: 7173855010005189587, guid: 1c993ef1894ec5348b20e9f99acfec07, type: 3}
-  startPointY: {fileID: 8452272491005124529, guid: 3120617a6863f634aaf2cc0130c7e512, type: 3}
-  _carPrefabX: {fileID: 4575679866475129504, guid: 8ae9e27386a901347a7478d792eacc9f, type: 3}
-  _carPrefabY: {fileID: 4575679866475129504, guid: f106c5f098cd76741bc1d656b549e276, type: 3}
---- !u!114 &741351353
+  _startPointX: {fileID: 3959681243143857900, guid: 8adf6785a4091e1419a9d971eb1d8ebf, type: 3}
+  _startPointY: {fileID: 6575891410461691840, guid: 298539c5e2910aa4abded616eebeb52b, type: 3}
+  _carPrefabX:
+    m_AssetGUID: 8ae9e27386a901347a7478d792eacc9f
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _carPrefabY:
+    m_AssetGUID: f106c5f098cd76741bc1d656b549e276
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+--- !u!114 &741351356
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -277,7 +189,55 @@ MonoBehaviour:
   m_GameObject: {fileID: 741351344}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d03c323d2c8152a47b7e0c51636facc9, type: 3}
+  m_Script: {fileID: 11500000, guid: 6de218dc22022f74fabb95c9f34c1cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carSpawner: {fileID: 741351352}
+  _otherPrefabs:
+  - m_AssetGUID: 042eb6b89ec74f544b029b0b761703b4
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: 3948703e74bdd0a4396036f2957bcc5a
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: cf4cb55ad85a0f542b3b28bdf9c75fe8
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: 8ac039f76727e4447a47a85d04c04006
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: d4bd070be6be24d44a3b232fa25382a1
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: 87eb8c9c925852749b6472f1f3d9c163
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: f74bd1c3007dd7749b0eb1934190f447
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _canvasPrefab:
+    m_AssetGUID: 41c4b92a96360404b8af7c73bee4fac8
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _trafficLightPrefab:
+    m_AssetGUID: 4574ce3d046a46546acf0dfdc7c4c227
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _xBarier:
+    m_AssetGUID: 0c665e5b09ef2a44891189b8268c9aec
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _yBarier:
+    m_AssetGUID: 67f58a8a8b72cab46ae2df3367650b40
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0

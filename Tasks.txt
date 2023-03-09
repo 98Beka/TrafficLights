@@ -1,0 +1,1 @@
+﻿hang all Spawners on GameInstaller

@@ -2,6 +2,7 @@
 
 public interface ICarView {
     public event Action Crash;
+    public event Action Finish;
     public float AdditaionSpeedForStarting { get; set; }
     public float MaxMagnitudeForAdditionalSpeed { get; set; }
     public float RayLong { get; set; }

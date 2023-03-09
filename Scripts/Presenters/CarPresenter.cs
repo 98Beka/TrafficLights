@@ -16,11 +16,13 @@ public class CarPresenter {
         _carModel.StartMoving += _carView.EnableMoving;
         _carModel.StartStoping += _carView.DisableMoving;
         _carView.Crash += _carModel.InvokeCrashEevent;
+        _carView.Finish += _carModel.InvokeFinishEvent;
     }
 
     public void Disable() {
         _carModel.StartMoving -= _carView.EnableMoving;
         _carModel.StartStoping -= _carView.DisableMoving;
         _carView.Crash -= _carModel.InvokeCrashEevent;
+        _carView.Finish -= _carModel.InvokeFinishEvent;
     }
 }

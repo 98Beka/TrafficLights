@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 932900d4f15b4874491cb1e375af91b8
+  m_SerializeEntries:
+  - m_GUID: f106c5f098cd76741bc1d656b549e276
+    m_Address: Assets/Prefabs/CarY.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8ae9e27386a901347a7478d792eacc9f
+    m_Address: Assets/Prefabs/CarX.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4574ce3d046a46546acf0dfdc7c4c227
+    m_Address: Assets/Prefabs/TrafficLights 1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 042eb6b89ec74f544b029b0b761703b4
+    m_Address: Assets/Prefabs/Roads/RoadX.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3948703e74bdd0a4396036f2957bcc5a
+    m_Address: Assets/Prefabs/Roads/RoadY.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cf4cb55ad85a0f542b3b28bdf9c75fe8
+    m_Address: Assets/Prefabs/Main Camera.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8ac039f76727e4447a47a85d04c04006
+    m_Address: Assets/Prefabs/EventSystem.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 41c4b92a96360404b8af7c73bee4fac8
+    m_Address: Assets/Prefabs/Canvas.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d4bd070be6be24d44a3b232fa25382a1
+    m_Address: Assets/Prefabs/Directional Light.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0c665e5b09ef2a44891189b8268c9aec
+    m_Address: Assets/Prefabs/Roads/barerX.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 67f58a8a8b72cab46ae2df3367650b40
+    m_Address: Assets/Prefabs/Roads/barerY.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f74bd1c3007dd7749b0eb1934190f447
+    m_Address: Assets/Prefabs/finishX.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 87eb8c9c925852749b6472f1f3d9c163
+    m_Address: Assets/Prefabs/finishY.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: fa4df528aec5e1e4d9b489f22eaa7fcc, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 7140d48e532935747be06d14f28a7510, type: 2}
+    - {fileID: 11400000, guid: 857759f77f758e64b953cb42102deb1a, type: 2}
