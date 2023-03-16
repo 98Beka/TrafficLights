@@ -1,20 +1,18 @@
 public class TrafficLightPresenter {
-    private ITrafficLightView _trafficLightView;
-    private ITrafficLightModel _trafficLightModel;
+    private ITrafficLightView _view;
+    private ITrafficLightModel _model;
 
     public TrafficLightPresenter(ITrafficLightView view, ITrafficLightModel model) {
-        _trafficLightView = view;
-        _trafficLightModel = model;
+        _view = view;
+        _model = model;
         Enable();
     }
-
     public void Enable() {
-        _trafficLightModel.SwitchX += _trafficLightView.SwitchX;
-        _trafficLightModel.SwitchY += _trafficLightView.SwitchY;
+        _model.SwitchX += _view.SwitchX;
+        _model.SwitchY += _view.SwitchY;
     }
-
     public void Disable() {
-        _trafficLightModel.SwitchX -= _trafficLightView.SwitchX;
-        _trafficLightModel.SwitchY -= _trafficLightView.SwitchY;
+        _model.SwitchX -= _view.SwitchX;
+        _model.SwitchY -= _view.SwitchY;
     }
 }

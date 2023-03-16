@@ -46,7 +46,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 41c4b92a96360404b8af7c73bee4fac8
-    m_Address: Assets/Prefabs/Canvas.prefab
+    m_Address: Assets/Prefabs/MainCanvas.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: d4bd070be6be24d44a3b232fa25382a1
@@ -67,6 +67,22 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: 87eb8c9c925852749b6472f1f3d9c163
     m_Address: Assets/Prefabs/finishY.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 982b0805d8dd348469beb720b23660cc
+    m_Address: Assets/Prefabs/StartButtonCanvas.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3b45170dc0747ad41bd4c3a0e664206d
+    m_Address: Assets/Prefabs/PauseButtonCanvas.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3d7b503eb3a01ec439c5e5495a495705
+    m_Address: Assets/Prefabs/WinCanvas.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0c188272b6506b44bb6d0302a7121792
+    m_Address: Assets/Prefabs/LooseCanvas.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 741351349}
   - component: {fileID: 741351356}
   - component: {fileID: 741351352}
+  - component: {fileID: 741351357}
   m_Layer: 0
   m_Name: GameInstaller
   m_TagString: Untagged
@@ -221,7 +222,7 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  _canvasPrefab:
+  _mainCanvasPrefab:
     m_AssetGUID: 41c4b92a96360404b8af7c73bee4fac8
     m_SubObjectName: 
     m_SubObjectType: 
@@ -231,13 +232,45 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  _xBarier:
+  _xBarierPrefab:
     m_AssetGUID: 0c665e5b09ef2a44891189b8268c9aec
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  _yBarier:
+  _yBarierPrefab:
     m_AssetGUID: 67f58a8a8b72cab46ae2df3367650b40
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+  _StartBtnPrefab:
+    m_AssetGUID: 982b0805d8dd348469beb720b23660cc
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _PuaseBtnPrefab:
+    m_AssetGUID: 3b45170dc0747ad41bd4c3a0e664206d
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _winWindowPrefab:
+    m_AssetGUID: 3d7b503eb3a01ec439c5e5495a495705
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _looseWindowPrefab:
+    m_AssetGUID: 0c188272b6506b44bb6d0302a7121792
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+--- !u!114 &741351357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741351344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4651f9fd0b7cc4ca0460527c0f72b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

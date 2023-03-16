@@ -1,30 +1,25 @@
 public class MainCanvasPresenter {
-    private IMainCanvasView _canvasView;
-    private IMainCanvasModel _canvasModel;
+    private IMainCanvasView _view;
+    private IMainCanvasModel _model;
 
     public MainCanvasPresenter(IMainCanvasView view, IMainCanvasModel model) {
-        _canvasModel = model;
-        _canvasView = view;
+        _model = model;
+        _view = view;
         Enable();
+        _view.UpdatePoints(_model.GetPoints());
     }
-
     public void Enable() {
-        _canvasView.StartGame += _canvasModel.StartGame;
-        _canvasView.PauseGame += _canvasModel.PauseGame;
-        _canvasView.ClickButtonX += _canvasModel.ClickX;
-        _canvasView.ClickButtonY += _canvasModel.ClickY;
-        _canvasModel.ActivateLoosePanel += _canvasView.OpenLoosePanel;
-        _canvasModel.ActivateMainPanel += _canvasView.OpenMainPanel;
-        _canvasModel.AddOnePoint += _canvasView.AddPoint;
+        _view.ClickButtonX += _model.ClickX;
+        _view.ClickButtonY += _model.ClickY;
+        _model.UpdatePointEvent += _view.UpdatePoints;
+        _model.ActivateEvent += _view.OnActivate;
+        _model.DisactivateEvent += _view.OnDisactivate;
     }
-
     public void Disable() {
-        _canvasView.StartGame -= _canvasModel.StartGame;
-        _canvasView.PauseGame -= _canvasModel.PauseGame;
-        _canvasView.ClickButtonX -= _canvasModel.ClickX;
-        _canvasView.ClickButtonY -= _canvasModel.ClickY;
-        _canvasModel.ActivateLoosePanel -= _canvasView.OpenLoosePanel;
-        _canvasModel.ActivateMainPanel -= _canvasView.OpenMainPanel;
-        _canvasModel.AddOnePoint -= _canvasView.AddPoint;
+        _view.ClickButtonX -= _model.ClickX;
+        _view.ClickButtonY -= _model.ClickY;
+        _model.UpdatePointEvent -= _view.UpdatePoints;
+        _model.ActivateEvent -= _view.OnActivate;
+        _model.DisactivateEvent -= _view.OnDisactivate;
     }
 }

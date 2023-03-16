@@ -1,28 +1,33 @@
 public class CarPresenter {
-    private ICarView _carView;
-    private ICarModel _carModel;
+    private ICarView _view;
+    private ICarModel _model;
 
     public CarPresenter(ICarView view, ICarModel model) {
-        _carModel = model;
-        _carView = view;
-        _carView.Speed = model.Speed;
-        _carView.RayLong = model.RayLong;
-        _carView.MaxMagnitudeForAdditionalSpeed = model.MaxMagnitudeForAdditionalSpeed;
-        _carView.AdditaionSpeedForStarting = model.AdditaionSpeedForStarting;
+        _model = model;
+        _view = view;
+        _view.RayLong = model.RayLong;
+        _view.MaxMagnitudeForAdditionalSpeed = model.MaxMagnitudeForAdditionalSpeed;
+        _view.AdditaionSpeedForStarting = model.AdditaionSpeedForStarting;
+        _view.DestroyMinY = model.DestroyMinY;
+        _view.Speed = model.Speed;
         Enable();
     }
-
     public void Enable() {
-        _carModel.StartMoving += _carView.EnableMoving;
-        _carModel.StartStoping += _carView.DisableMoving;
-        _carView.Crash += _carModel.InvokeCrashEevent;
-        _carView.Finish += _carModel.InvokeFinishEvent;
+        _view.Crash += _model.InvokeCrashEevent;
+        _view.Finish += _model.InvokeFinishEvent;
+        _model.ShotInfoEvent += _view.ShotInfo;
+        _view.SetCarData += _model.SetCarData;
+        _model.ActivateEvent += _view.Activate;
+        _model.ActivateEngineEvent += _view.OnActivateEngine;
+        _model.DisactivateEngineEvent += _view.OnDisactivateEngine;
     }
-
     public void Disable() {
-        _carModel.StartMoving -= _carView.EnableMoving;
-        _carModel.StartStoping -= _carView.DisableMoving;
-        _carView.Crash -= _carModel.InvokeCrashEevent;
-        _carView.Finish -= _carModel.InvokeFinishEvent;
+        _view.Crash -= _model.InvokeCrashEevent;
+        _view.Finish -= _model.InvokeFinishEvent;
+        _model.ShotInfoEvent -= _view.ShotInfo;
+        _view.SetCarData -= _model.SetCarData;
+        _model.ActivateEvent -= _view.Activate;
+        _model.ActivateEngineEvent -= _view.OnActivateEngine;
+        _model.DisactivateEngineEvent -= _view.OnDisactivateEngine;
     }
 }

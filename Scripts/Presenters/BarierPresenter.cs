@@ -2,20 +2,18 @@ using System;
 using UnityEngine;
 
 public class BarierPresenter : MonoBehaviour {
-    private IBarierView _barierView;
-    private IBarierModel _barierModel;
+    private IBarierView _view;
+    private IBarierModel _model;
 
     public BarierPresenter(IBarierView view, IBarierModel model) {
-        _barierView = view;
-        _barierModel = model;
+        _view = view;
+        _model = model;
         Enable();
     }
-
     public void Enable() {
-        _barierModel.Active += _barierView.SwitchActive;
+        _model.Active += _view.SwitchActive;
     }
-
     public void Disable() {
-        _barierModel.Active -= _barierView.SwitchActive;
+        _model.Active -= _view.SwitchActive;
     }
 }

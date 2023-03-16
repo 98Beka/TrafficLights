@@ -1,8 +1,9 @@
 using System;
 using UnityEngine;
+using static ICarView;
 
 public class CarView : MonoBehaviour, ICarView {
-    private const int MIN_Y = -5;
+    public event SetInfo SetCarData;
     public event Action Crash;
     public event Action Finish;
     private Rigidbody _rb;
@@ -12,19 +13,17 @@ public class CarView : MonoBehaviour, ICarView {
     public float MaxMagnitudeForAdditionalSpeed { get; set; }
     public float RayLong { get; set; }
     public float Speed { get; set; }
-    [SerializeField] float speed;
-
+    public float DestroyMinY { get; set; }
     private void Start() {
         _rb = this.gameObject.GetComponent<Rigidbody>();
-        speed = Speed;
     }
 
     private void Update() {
         bool isRoadFree = CheckIfRoadFree();
 
-        _isEngineTurnedOn = isRoadFree ? true : false;
-        Move();
-        if (transform.position.y < MIN_Y)
+        if(isRoadFree)
+            Move();
+        if (transform.position.y < DestroyMinY)
             Destroy(this.gameObject, 3);
     }
     private bool CheckIfRoadFree() {
@@ -53,9 +52,23 @@ public class CarView : MonoBehaviour, ICarView {
         }
         if(other.gameObject.tag == "finish") {
             Finish?.Invoke();
-            Destroy(this.gameObject);
+            DisActivate();
         }
     }
-    public void EnableMoving() => _isEngineTurnedOn = true;
-    public void DisableMoving() => _isEngineTurnedOn = false;
+    public void ShotInfo() {
+        SetCarData?.Invoke(new CarData() {
+            EulerAngles = transform.eulerAngles,
+            Position = transform.position,
+        });
+    }
+    public void OnActivateEngine() => _isEngineTurnedOn = true;
+    public void OnDisactivateEngine() => _isEngineTurnedOn = false;
+    private void DisActivate() {
+        this.gameObject.SetActive(false);
+    }
+    public void Activate(CarData carData) {
+        transform.position = carData.Position;
+        transform.eulerAngles = carData.EulerAngles;
+        this.gameObject.SetActive(true);
+    }
 }
