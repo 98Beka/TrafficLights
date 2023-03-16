@@ -7,11 +7,11 @@ public class MainCanvasView : MonoBehaviour, IMainCanvasView {
     [SerializeField] Button _yButton;
     [SerializeField] Text _pointsUI;
     [SerializeField] GameObject _panel;
-    public event Action ClickButtonX;
-    public event Action ClickButtonY;
+    public event Action XButtonClickEvent;
+    public event Action YButtonClickEvent;
     private void Start() {
-        _xButton.onClick.AddListener(() => ClickButtonX?.Invoke());
-        _yButton.onClick.AddListener(() => ClickButtonY?.Invoke());
+        _xButton.onClick.AddListener(() => XButtonClickEvent?.Invoke());
+        _yButton.onClick.AddListener(() => YButtonClickEvent?.Invoke());
     }
     public void UpdatePoints(int points) {
         _pointsUI.text = points.ToString();

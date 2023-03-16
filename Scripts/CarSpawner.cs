@@ -128,7 +128,7 @@ public class CarSpawner : MonoBehaviour, ICarSpawner {
         foreach (var item in _cars)
             item.ActivateEngine();
     }
-IEnumerator Load() {
+    IEnumerator Load() {
         yield return new WaitForSeconds(_delayForStartLoading);
         var carsIds = SaveSystem.Load<CarsIdsForSave>("carsIds");
         if (carsIds != null) {

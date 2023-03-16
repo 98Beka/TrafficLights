@@ -9,15 +9,15 @@ public class MainCanvasPresenter {
         _view.UpdatePoints(_model.GetPoints());
     }
     public void Enable() {
-        _view.ClickButtonX += _model.ClickX;
-        _view.ClickButtonY += _model.ClickY;
+        _view.XButtonClickEvent += _model.OnClickX;
+        _view.YButtonClickEvent += _model.OnClickY;
         _model.UpdatePointEvent += _view.UpdatePoints;
         _model.ActivateEvent += _view.OnActivate;
         _model.DisactivateEvent += _view.OnDisactivate;
     }
     public void Disable() {
-        _view.ClickButtonX -= _model.ClickX;
-        _view.ClickButtonY -= _model.ClickY;
+        _view.XButtonClickEvent -= _model.OnClickX;
+        _view.YButtonClickEvent -= _model.OnClickY;
         _model.UpdatePointEvent -= _view.UpdatePoints;
         _model.ActivateEvent -= _view.OnActivate;
         _model.DisactivateEvent -= _view.OnDisactivate;

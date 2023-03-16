@@ -57,10 +57,10 @@ public class EnvirenmentInitializer : MonoBehaviour {
         pauseBtnModel.OnButtonClick();
 
 
-        mainCanvasModel.onWin = () => winWindowModel.Activate();
+        mainCanvasModel.WinEvent += () => winWindowModel.Activate();
 
-        mainCanvasModel.ClickButtonX += trafficLightModel.SwitchLightX;
-        mainCanvasModel.ClickButtonY += trafficLightModel.SwitchLightY;
+        mainCanvasModel.XButtonClickEvent += trafficLightModel.SwitchLightX;
+        mainCanvasModel.YButtonClickEvent += trafficLightModel.SwitchLightY;
 
         _carSpawner.OnAddPoint = () => mainCanvasModel.AddPoint();
 
